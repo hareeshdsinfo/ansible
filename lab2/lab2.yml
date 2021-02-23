@@ -11,6 +11,16 @@
       state: started
   - name: mysql-python is need to installed
     apt:
-      name: mysql-connector-python
+      name: python-mysqldb
+      state: present
+  - name: create db
+    mysql_db:
+      name: devops
+      state: present
+  - name: create an user harish
+    mysql_user:
+      name: harish
+      password: harish@123
+      priv: '*.*:ALL'
       state: present
 
