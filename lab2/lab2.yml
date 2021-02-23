@@ -1,0 +1,16 @@
+- hosts: app
+  become: yes
+  tasks:
+  - name: installing the mysql DB
+    yum: 
+      name: mysql-server 
+      state: latest
+  - name: Ensure mysql is running
+    service: 
+      name: mysql 
+      state: started
+  - name: mysql-python is need to installed
+    apt:
+      name: mysql-connector-python
+      state: present
+
