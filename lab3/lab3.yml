@@ -1,0 +1,30 @@
+- hosts: app
+  become: yes
+  vars:
+    dbname: harish
+    dbuser: mint
+    dbpass: harish@123
+  tasks:
+  - name: installing the mysql DB
+    yum: 
+      name: mysql-server 
+      state: latest
+  - name: Ensure mysql is running
+    service: 
+      name: mysql 
+      state: started
+  - name: mysql-python is need to installed
+    apt:
+      name: python-mysqldb
+      state: present
+  - name: create db
+    mysql_db:
+      name: "{{dbname}}"
+      state: present
+  - name: create an user harish
+    mysql_user:
+      name: "{{dbuser}}"
+      password: "{{dbpass}}"
+      priv: '*.*:ALL'
+      state: present
+

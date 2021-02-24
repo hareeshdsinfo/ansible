@@ -1,0 +1,7 @@
+---
+
+vars:
+    dbname: harish
+    dbuser: mint
+    dbpass: harish@123
+

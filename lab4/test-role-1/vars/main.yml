@@ -1,0 +1,5 @@
+---
+# vars file for test-role-1
+dbname: harish
+dbuser: harish1
+dbpassword: harish@319
