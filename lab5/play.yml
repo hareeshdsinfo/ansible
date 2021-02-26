@@ -1,0 +1,28 @@
+- hosts: websrvgrp
+  become: yes
+  tasks:
+
+    - name: print motd file output
+      command: /usr/bin/whoami
+      register: USRNM
+
+
+    - debug:
+        msg: "Value of whomai command is {{USRNM.stdout}}" 
+     
+    - name: create a file in the remote directory
+      file: 
+        path=/etc/motd 
+        state=touch
+
+    - file:
+        path: /etc/motd
+        owner: ubuntu
+        group: ubuntu
+
+      # - stat:
+      #   path: /etc/motd
+      # register: motd_stat
+
+      #- debug:
+      #  msg: "{{motd_stat}}"
