@@ -1,0 +1,14 @@
+---
+- hosts: mydc
+  vars:
+   http_ports: 8087
+   username: devops
+  vars_prompt:
+    - name: "dbpass"
+      prompt: "Enter DB password"
+
+  tasks:
+    - debug: msg="DB password is {{dbpass}}" 
+
+
+

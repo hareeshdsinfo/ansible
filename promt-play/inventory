@@ -1,12 +1,10 @@
 web ansible_host=172.31.54.112 
 app ansible_host=172.31.51.107 
 db  ansible_host=172.31.60.187
-web01 ansible_host=172.31.31.220
 
 [websrvgrp]
 web
 app
-web01
 
 [dbsrvgrp]
 db

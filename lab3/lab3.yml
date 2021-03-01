@@ -1,10 +1,10 @@
-- hosts: app
+- hosts: mydc
   become: yes
   vars:
     dbname: harish
     dbuser: mint
     dbpass: harish@123
-  tasks:
+  tasks: 
   - name: installing the mysql DB
     yum: 
       name: mysql-server 
